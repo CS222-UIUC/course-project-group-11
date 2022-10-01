@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Hello, {{items[0]}}!</h2>
+  <br>
+  <p>This semester, you're enrolled in:</p>
+  <br>
+  {% for course in items[1]["courses"] %}
+  <form action="/temp" method="GET">
+    <input type="submit" value='{{course}}'/>
+  </form>
+  <br>
+  {% endfor %}
+  <br>
+  <p>People you might be interested:</p>
+  <br>
+  {% for user in items[2] %}
+  <form action="/temp" method="GET">
+    <input type="submit" value='{{user}}'/>
+  </form>
+  <br>
+  {% endfor %}
+{% endblock content %}
