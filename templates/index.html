@@ -36,17 +36,15 @@
 
       </fieldset>
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <h1>If you have not, please sign up from the form below!</h1>
-    <br>
-    <a href="https://forms.gle/GjPRn61C6Ak5Xxbc6"><h1>Form</h1></a>
+    <form action="{{ url_for('register') }}" method="POST">
+      <fieldset>
+        <legend>
+          If you have not signed up yet:
+        </legend>
+      <input type="submit" value="Sign up"/>
+    </form>
     
-
-
     
   </body>
 </html>

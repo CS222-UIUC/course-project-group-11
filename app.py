@@ -48,6 +48,13 @@ def temp():
     shows almost nothing but later will be developed"""
     return render_template("base.html"), 200
 
+@app.route('/register', methods=["POST"])
+def register():
+    """This route is still under construction and
+    shows almost nothing but later will be dev"""
+    # return "reached", 200
+    return render_template("register.html"), 200
+
 # @app.route('/lookup/<course>', methods=["GET"])
 # def courses(course):
 #     """Route for /lookup"""
