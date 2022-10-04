@@ -1,8 +1,6 @@
 .vscode
 .venv
 .coverage
-venv/*
-*.vscode/*
 *.dSYM/*
 *.DS_Store
 **/__pycache__
