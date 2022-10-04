@@ -1,8 +1,9 @@
 .vscode
 .venv
+.coverage
 venv/*
-*/__pycache__/*
-*.pytest_cache/*
 *.vscode/*
 *.dSYM/*
 *.DS_Store
+**/__pycache__
+**/.pytest_cache
