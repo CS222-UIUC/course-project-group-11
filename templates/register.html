@@ -14,7 +14,7 @@
     <form action="{{ url_for('user_login') }}" method="POST">
       <fieldset>
         <legend>
-          If you already have signed up:
+          Sign up form:
         </legend>
         
         <label>
@@ -26,14 +26,21 @@
         <br>
 
         <label>
-          Password:
+          Password (more than 8 characters long):
           <input type="pw" name="pw" size="30" maxlength="20">
         </label>
         <br/>
         <br/>
 
         <label>
-          DiscordID:
+          Enter your password again:
+          <input type="pwa" name="pwa" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          DiscordID (optional):
           <input type="discId" name="discId" size="30" maxlength="20">
         </label>
         <br/>
@@ -42,46 +49,70 @@
         <label>
           Course 1:
           <input type="course1" name="course1" size="30" maxlength="20">
+          CRN:
+          <input type="crn1" name="crn1" size="30" maxlength="10">
+          Section Number:
+          <input type="sn1" name="sn1" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
         <label>
-          Course 2:
+          Course 2 (optional):
           <input type="course2" name="course2" size="30" maxlength="20">
+          CRN (optional):
+          <input type="crn2" name="crn2" size="30" maxlength="10">
+          Section Number (optional):
+          <input type="sn2" name="sn2" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
         <label>
-          Course 3:
+          Course 3 (optional):
           <input type="course3" name="course3" size="30" maxlength="20">
+          CRN (optional):
+          <input type="crn3" name="crn3" size="30" maxlength="10">
+          Section Number (optional):
+          <input type="sn3" name="sn3" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
         <label>
-          Course 4:
+          Course 4 (optional):
           <input type="course4" name="course4" size="30" maxlength="20">
+          CRN (optional):
+          <input type="crn4" name="crn4" size="30" maxlength="10">
+          Section Number (optional):
+          <input type="sn4" name="sn4" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
         <label>
-          Course 5 (if you are enrolled in):
+          Course 5 (optional):
           <input type="course5" name="course5" size="30" maxlength="20">
+          CRN (optional):
+          <input type="crn5" name="crn5" size="30" maxlength="10">
+          Section Number (optional):
+          <input type="sn5" name="sn5" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
         <label>
-          Course 6 (if you are enrolled in):
+          Course 6 (optional):
           <input type="course6" name="course6" size="30" maxlength="20">
+          CRN (optional):
+          <input type="crn6" name="crn6" size="30" maxlength="10">
+          Section Number (optional):
+          <input type="sn6" name="sn6" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
-        <input type="submit" value="Sign up"/>
+        <input type="submit" value="Create an account"/>
 
 
 

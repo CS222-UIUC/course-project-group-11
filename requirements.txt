@@ -6,3 +6,6 @@ python-dotenv
 requests
 Jinja2==2.11.3
 MarkupSafe==1.1.1
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.1
+PyMySQL==1.0.2
