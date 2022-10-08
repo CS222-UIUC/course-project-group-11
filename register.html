@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" type = "text/css" href="register.css">
+  </head>
+
+  <body>
+    <h1>ClassKonnect</h1>
+    <br>
+    <br>
+    <h1>Welcome! Please sign up!</h1>
+    <br>
+    <br>
+    <form action="{{ url_for('user_login') }}" method="POST">
+      <fieldset>
+        <legend>
+          If you already have signed up:
+        </legend>
+        
+        <label>
+          NetID:
+          <input type="netid" name="netid" size="30" maxlength="10">
+        </label>
+
+        <br>
+        <br>
+
+        <label>
+          Password:
+          <input type="pw" name="pw" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          DiscordID:
+          <input type="discId" name="discId" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 1:
+         <ul><a href ="#">ASTR100</a></ul>
+         <ul><a href ="#">ASTR102</a></ul>
+         <ul><a href ="#">ASTR103</a></ul>
+         <ul><a href ="#">ASTR104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 2:
+          <ul><a href ="#">ASTR100</a></ul>
+          <ul><a href ="#">ASTR102</a></ul>
+          <ul><a href ="#">ASTR103</a></ul>
+          <ul><a href ="#">ASTR104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 3:
+          <ul><a href ="#">MATH100</a></ul>
+          <ul><a href ="#">MATH102</a></ul>
+          <ul><a href ="#">MATH103</a></ul>
+          <ul><a href ="#">MATH104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 4:
+          <ul><a href ="#">CS100</a></ul>
+         <ul><a href ="#">CS102</a></ul>
+         <ul><a href ="#">CS103</a></ul>
+         <ul><a href ="#">CS104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <label class = "course5">
+          Course 5 (if you are enrolled in):
+         <ul><a href ="#">TAM100</a></ul>
+         <ul><a href ="#">TAM102</a></ul>
+         <ul><a href ="#">TAM103</a></ul>
+         <ul><a href ="#">TAM104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <label class="course6">
+          Course 6 (if you are enrolled in):
+         <ul><a href ="#">ASTR100</a></ul>
+         <ul><a href ="#">ASTR102</a></ul>
+         <ul><a href ="#">ASTR103</a></ul>
+         <ul><a href ="#">ASTR104</a></ul>
+        </label>
+        <br/>
+        <br/>
+
+        <input type="submit" value="Sign up"/>
+
+
+
+      </fieldset>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+
+    
+  </body>
+</html>
