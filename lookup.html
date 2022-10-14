@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/lookup.css') }}">
+  </head>
+
+  <body>
+    <h1>Please Select The Courses You Would Like To Search:</h1>
+    <br>
+    <br> 
+    <form action="/action_page.php">
+         <label for="classes">Choose your classes(Select multiple using Ctrl or Command)</label>
+            <select name="classes" id="classes" multiple>
+               <option value="class1">class1</option> <!-- read relevant classes from the database -->
+               <option value="class2">class2</option>
+               <option value="class3">class3</option> 
+        </select>
+        <br>
+        <br>
+        <!-- using the classes read in above, perform the necessary lookup on the database -->
+    </form>
+    <h1>Student profiles with courses matching your selection:</h1>
+     <!-- Display the results of the lookup -->
+    <br>
+    <br>
+
+
+  </body>
+</html>
