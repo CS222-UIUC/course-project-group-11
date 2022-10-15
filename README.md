@@ -2,13 +2,19 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
-# Update on Oct 7
-For now, we do not use SQL databases because we have not agreed on how to host the databases (if we are allowed to set up and interact with databases locally, never in a production environment, we will take that route). Thus, as global variables, we put some random user information and course information. In the log-in page, hence, put 'guest' as our NetID and '1234' as our password.
+# Update on Oct 14
+For now, we set up SQL databases locally. I successfully populated dummy data and interacted with it on my backend. Here are the screenshots of the tables.
 
-Update:
+Users
+<img src="/static/img/users.png" alt="test_coverage" style="height: 250px; width:2276px;"/>
+
+Courses
+<img src="/static/img/courses.png" alt="test_coverage" style="height: 180px; width:1876px;"/>
+
+Enrollments
+<img src="/static/img/enrollments.png" alt="test_coverage" style="height: 250px; width:127px;"/>
+
 I managed to extract info on every section of every course offered at UIUC in Fall 2022 from Course Explorer API. Refer to `course_extractor.ipynb`. If you run each cell in the jupyter notebook, you will obtain `fall2022_courses.csv` which is exactly what we need. Now that it is just a few steps away from setting up a database, I guess each of us can set it up locally. I consider setting it up on AWS so that we all can interact with the DB.
-
-Also, when you click on the course button (CS222 SL1 specifically), sample course/section information on CS222 SL1 will show up. For other courses, it won't work at this time.
 
 ## Requirements
 Refer to the `requirements.txt` file.
