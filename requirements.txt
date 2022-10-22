@@ -7,6 +7,4 @@ requests
 flask_mysqldb
 Jinja2
 MarkupSafe
-Flask-SQLAlchemy
-SQLAlchemy
 PyMySQL
