@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login_page.css') }}">
+  </head>
+  
+  <body>
+    <h1>ClassKonnect</h1>
+    <br>
+    <br>
+    <h1>Welcome! Please log in or sign up!</h1>
+    <br>
+    <br>
+    <form action="{{ url_for('user_login') }}" method="POST">
+      <fieldset>
+        <legend>
+          If you have already signed up:
+        </legend>
+        
+        <label>
+          NetID:
+          <input type="netid" name="netid" size="30" maxlength="10">
+        </label>
+
+        <br>
+        <br>
+
+        <label>
+          Password:
+          <input type="pw" name="pw" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <input type="submit" value="Log in"/>
+
+      </fieldset>
+    </form>
+
+    <form action="{{ url_for('register') }}" method="POST">
+      <fieldset>
+        <legend>
+          If you have not signed up yet:
+        </legend>
+      <input type="submit" value="Sign up"/>
+    </form>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{items['subjectId']}} {{items['courseNum']}} {{items['sectionNum']}} ({{items['creditHours']}})</h2>
+  <br>
+  <h2>{{items['courseName']}}</h2>
+  <br>
+  <p>{{items['description']}}</p>
+  <br>
+  <h2>Main Instructor: {{items['mainInstructor']}}</h2>
+  <br>
+  <h2>Course meetings</h2>
+  {{items['daysOfTheWeek']}}: {{items['startTime']}} - {{items['endTime']}}
+  <br>
+  <br>
+  <h2>Location</h2>
+  {{items['buildingName']}} {{items['roomNum']}}
+{% endblock content %}

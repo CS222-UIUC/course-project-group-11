@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Hello, {{items[0]}}!</h2>
+  <br>
+  <form action="/search/{{items[0]}}" method="POST">
+    <input type="submit" value='Class Search'/>
+  </form>
+  <p>This semester, you're enrolled in:</p>
+  <br>
+  {% for section in items[1] %}
+  <form action="/section/{{section[0][0]}}/{{section[0][1]}}" method="POST">
+    <input type="submit" value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'/>
+  </form>
+  <br>
+  {% endfor %}
+  <br>
+  <p>People you might be interested:</p>
+  <br>
+  {% for user in items[2] %}
+  <form action="{{ url_for('user_info') }}" method="POST">
+    <input type="submit" value='{{user}}'/>
+  </form>
+  <br>
+  {% endfor %}
+{% endblock content %}

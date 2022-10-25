@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <form action="/user_info" method="POST">
+    {% for section in items %}
+        <input type="checkbox" id='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' name='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'>
+        <label for='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'> {{section[0][0]}} {{section[0][1]}} {{section[0][2]}}</label><br>
+    {% endfor %}
+  <br>
+  <input type="submit" value="Submit">
+  </form>
+
+{% endblock content %}

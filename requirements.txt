@@ -1,0 +1,10 @@
+flask
+pytest
+pytest-cov
+pylint
+python-dotenv
+requests
+flask_mysqldb
+Jinja2
+MarkupSafe
+PyMySQL
