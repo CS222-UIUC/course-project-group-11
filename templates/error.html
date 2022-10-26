@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Error! Please try logging in again.</h2>
+  <h2>{{items[0]}}</h2>
   <br>
+  <h2>Please try again.</h2>
   <form action="/" method="GET">
     <input type="submit" value='Go back to the main page'/>
   </form>
