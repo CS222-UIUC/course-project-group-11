@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h2>NetID: {{items[0]}}</h2>
+<input type="submit" value="Direct Message"/>
+<br>
+<h3>Discord ID: {{items[1]}}</h3>
+<br>
+<br>
+<h3>List of courses {{items[0]}} is enrolled in this semester:</h3>
+{% for section in items[2] %}
+  <form action="/section/{{section[0][0]}}/{{section[0][1]}}/{{section[0][2]}}" method="POST">
+    <input type="submit" value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'/>
+  </form>
+  <br>
+{% endfor %}
+
 {% endblock content %}
