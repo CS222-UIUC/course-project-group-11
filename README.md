@@ -2,6 +2,11 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
+# Update on Nov 4
+I populated 10 additional users with valid enrollments to the database so that we have more understanding on how this web app works. Also, I have implemented the multi-class search functionality although this is not still perfect in that the program cannot handle more than 3 multiple class seraches. Next week, I will focus on finalizing this functionality.
+
+### Legacy statements
+
 # Update on Oct 28
 I implemented the functionality to display courses and users info when you click on a button associated with either of them, fetching data from the SQL database (see screenshots below)
 
@@ -34,7 +39,6 @@ Enrollments
 
 <img src="/static/img/enrollments.png" alt="test_coverage" style="height: 480px; width:176px;"/>
 
-### Legacy statements
 # Update on Oct 21
 I decided to make my SQL server on AWS available to anyone who has access to this PR/repo so serious security concerns aside, we can all access the same DB on AWS at least in `app.py`.
 

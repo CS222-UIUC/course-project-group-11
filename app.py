@@ -10,21 +10,6 @@ app.config['MYSQL_PASSWORD'] = 'cU5SbJW6BCoLHmcyXe7n'
 app.config['MYSQL_DB'] = 'classkonnect'
 mysql = MySQL(app)
 
-# this database on AWS contains three tables with the following pieces of data:
-# users (netID, pw, discID)
-#       ('yoda2', '1234', 'Yoda#1234')
-#       ('guest', '1234', '')
-#       ('inst', '1234', '')
-#       ('guest2', '5678', 'Guest#8888')
-#       ('guest3', '5678', 'Disc#1011')
-# enrollments (netID, CRN)
-#             ('yoda2', 74484), ('yoda2', 35917), ('yoda2', 63733), ('yoda2', 35030)
-#             ('guest', 74484), ('guest', 35917), ('guest', 59328), ('guest', 63037)
-#             ('inst', 74484), ('inst', 77096), ('inst', 66445), ('inst', 35030)
-#             ('guest2', 56053), ('guest2', 35917), ('guest2', 36091), ('guest2', 33828), ('guest2', 63037)
-#             ('guest3', 31892), ('guest3', 36702), ('guest3', 36091), ('guest3', 46792), ('guest3', 70159)
-# courses: now this table contains the exact same elements as the csv file
-
 # pylint: disable=line-too-long
 @app.route('/')
 def index():
@@ -184,4 +169,91 @@ def search(user):
         section = cursor.fetchall()
         required_info.append(section)
     cursor.close()
+    required_info.append(user)
     return render_template("search.html", items=required_info), 200
+
+@app.route('/result/<user>', methods=["POST"])
+def class_search(user):
+    items = request.form
+
+    if len(items) == 0:
+        error_message = 'Please select at least one course!'
+        return render_template("search_error.html", items=error_message), 404
+    else:
+        cursor = mysql.connection.cursor()
+        course_list = []
+
+        for course in items:
+            course_list.append(course[0])
+
+        if len(course_list) == 1:
+            required_info = []
+            c = course_list[0]
+            course_info_list = []
+            for l in c:
+                if l == ' ':
+                    course_info_list.append(info)
+                    info = ''
+                if l == c[-1]:
+                    info = info + l
+                    course_info_list.append(info)
+                else:
+                    info = info + l
+            course_info_list[1] = course_info_list[1][1:]
+            course_info_list[2] = course_info_list[2][1:]
+            subject = course_info_list[0]
+            course = course_info_list[1]
+            section = course_info_list[2]
+            query = f''' SELECT CRN FROM classkonnect.courses WHERE SubjectId = '{subject}' AND CourseNumber = {course} AND SectionNumber = '{section}'; '''
+            cursor.execute(query)
+            courses = cursor.fetchall()
+            query2 = f''' SELECT netId FROM classkonnect.enrollments WHERE CRN = {courses[0]}; '''
+            cursor.execute(query2)
+            crn = cursor.fetchall()
+            cursor.close()
+            required_info.append(crn)
+            return render_template("result.html", items=required_info), 200
+        
+        if len(course_list) == 2:
+            required_info = []
+            c = course_list[0]
+            course_info_list = []
+            for l in c:
+                if l == ' ':
+                    course_info_list.append(info)
+                    info = ''
+                if l == c[-1]:
+                    info = info + l
+                    course_info_list.append(info)
+                else:
+                    info = info + l
+            course_info_list[1] = course_info_list[1][1:]
+            course_info_list[2] = course_info_list[2][1:]
+            subject = course_info_list[0]
+            course = course_info_list[1]
+            section = course_info_list[2]
+            c1 = course_list[1]
+            for l in c1:
+                if l == ' ':
+                    course_info_list.append(info)
+                    info = ''
+                if l == c1[-1]:
+                    info = info + l
+                    course_info_list.append(info)
+                else:
+                    info = info + l
+            course_info_list[4] = course_info_list[4][1:]
+            course_info_list[5] = course_info_list[5][1:]
+            subject1 = course_info_list[3]
+            course1 = course_info_list[4]
+            section1 = course_info_list[5]
+            query = f''' SELECT CRN FROM classkonnect.courses WHERE (SubjectId = '{subject}' AND CourseNumber = {course} AND SectionNumber = '{section}') OR (SubjectId = '{subject1}' AND CourseNumber = {course1} AND SectionNumber = '{section1}'); '''
+            cursor.execute(query)
+            crns = cursor.fetchall()
+            query2 = f''' SELECT DISTINCT a.netId FROM (SELECT netId FROM classkonnect.enrollments WHERE CRN = {crns[0][0]}) AS a INNER JOIN (SELECT netId FROM classkonnect.enrollments WHERE CRN = {crns[1][0]}) as b ON a.netId = b.netId; '''
+            cursor.execute(query2)
+            users = cursor.fetchall()
+            cursor.close()
+            required_info.append(users)
+            return render_template("result.html", items=required_info), 200
+    return render_template("search_error.html", items='error'), 404

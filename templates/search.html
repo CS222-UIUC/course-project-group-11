@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
+<br>
+<br>
+<h2>
+  Select a course or courses (up to 5) if you want to find your peers enrolled in the course(s)!
+</h2>
 
-  <form action="/user_info" method="POST">
-    {% for section in items %}
-        <input type="checkbox" id='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' name='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'>
+  <form action="/result/{{items[-1]}}" method="POST">
+    {% for section in items[:-1] %}
+        <input type="checkbox" name='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'>
         <label for='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'> {{section[0][0]}} {{section[0][1]}} {{section[0][2]}}</label><br>
     {% endfor %}
   <br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Search">
   </form>
 
 {% endblock content %}
