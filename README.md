@@ -2,10 +2,13 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
-# Update on Nov 4
-I populated 10 additional users with valid enrollments to the database so that we have more understanding on how this web app works. Also, I have implemented the multi-class search functionality although this is not still perfect in that the program cannot handle more than 3 multiple class seraches. Next week, I will focus on finalizing this functionality.
+# Update on Nov 11
+I successfully implemented the multi-class search functionality which now handles up to 4 multiple class search. Also, I fixed a minor bug which stopped us from looking for some course information. This was due to the fact that during the migration of the data from the CSV to our DB on AWS, whitespaces and other punctuations were not handled properly for some courses. Thus, I added a piece of code in `app.py` to deal with this seemingly minor issue.
 
 ### Legacy statements
+
+# Update on Nov 4
+I populated 10 additional users with valid enrollments to the database so that we have more understanding on how this web app works. Also, I have implemented the multi-class search functionality although this is not still perfect in that the program cannot handle more than 3 multiple class seraches. Next week, I will focus on finalizing this functionality.
 
 # Update on Oct 28
 I implemented the functionality to display courses and users info when you click on a button associated with either of them, fetching data from the SQL database (see screenshots below)
