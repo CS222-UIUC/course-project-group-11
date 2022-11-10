@@ -5,6 +5,10 @@
 # Update on Nov 11
 I successfully implemented the multi-class search functionality which now handles up to 4 multiple class search. Also, I fixed a minor bug which stopped us from looking for some course information. This was due to the fact that during the migration of the data from the CSV to our DB on AWS, whitespaces and other punctuations were not handled properly for some courses. Thus, I added a piece of code in `app.py` to deal with this seemingly minor issue.
 
+Screenshots for the search page with two classes selected and for the result page:
+<img src="/static/img/search1.png" alt="users" style="height: 250px; width:2276px;"/>
+<img src="/static/img/search2.png" alt="users" style="height: 250px; width:2276px;"/>
+
 ### Legacy statements
 
 # Update on Nov 4
