@@ -179,6 +179,7 @@ def search(user):
 
 @app.route('/result/<user>', methods=["POST"])
 def class_search(user):
+    # multi-class search functionality
     items = request.form
     if len(items) == 0:
         error_message = 'Please select at least one course!'
