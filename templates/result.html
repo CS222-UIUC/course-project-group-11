@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<h2>
+  Here are the results of the search.
+</h2>
+  {% for user in items[0] %}
+  <form action="/user_info/{{user[0]}}" method="POST">
+    <input type="submit" value='{{user[0]}}'/>
+  </form>
+  <br>
+  {% endfor %}
+{% endblock content %}
