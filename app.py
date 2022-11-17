@@ -45,6 +45,7 @@ def user():
                 else:
                     sub_subquery = sub_subquery + ' OR CRN = ' + str(course[0])
             required_info.append(enrollment_info)
+            
             # fetch the top 5 most similar students to the logged in user
             subquery = f''' WHERE netId NOT LIKE '{items['netid']}' AND ({sub_subquery}) '''
             query4 = f''' SELECT netId FROM classkonnect.users WHERE netID NOT LIKE '{items['netid']}'; '''
