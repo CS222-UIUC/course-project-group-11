@@ -31,16 +31,24 @@ def user():
             query2 = f''' SELECT CRN FROM classkonnect.enrollments WHERE netId = '{items["netid"]}'; '''
             cursor.execute(query2)
             courses = cursor.fetchall()
+            print(courses)
+            print(len(courses))
             enrollment_info = []
+            sub_subquery = ''
             for course in courses:
                 query3 = f''' SELECT SubjectId, CourseNumber, SectionNumber FROM classkonnect.courses WHERE CRN = {course[0]}; '''
                 cursor.execute(query3)
                 section = cursor.fetchall()
                 enrollment_info.append(section)
+                if course == courses[0]:
+                    sub_subquery = sub_subquery + 'CRN = ' + str(course[0])
+                else:
+                    sub_subquery = sub_subquery + ' OR CRN = ' + str(course[0])
             required_info.append(enrollment_info)
-            # we're supposed to run a complex query here to obtain a list of similar students
-            # for now, I will just list up some users to display user info
-            query4 = f''' SELECT netId FROM classkonnect.users WHERE netID NOT LIKE '{items['netid']}' LIMIT 2; '''
+            # fetch the top 5 most similar students to the logged in user
+            subquery = f''' WHERE netId NOT LIKE '{items['netid']}' AND ({sub_subquery}) '''
+            query4 = f''' SELECT netId FROM classkonnect.users WHERE netID NOT LIKE '{items['netid']}'; '''
+            query4 = f''' SELECT netId, COUNT(*) as dupCount FROM classkonnect.enrollments {subquery} GROUP BY netId ORDER BY dupCount DESC LIMIT 5; '''
             cursor.execute(query4)
             other_users = cursor.fetchall()
             required_info.append(other_users)
@@ -152,7 +160,10 @@ def section_info(subject, course, section):
     cursor.execute(query)
     sectioninfo = cursor.fetchall()
     if len(sectioninfo) == 0: # To cope with a minor bug
-        section = section + ' '
+        if len(section) == 1:
+            section = section + '  '
+        else:
+            section = section + ' '
         query = f''' SELECT * FROM classkonnect.courses WHERE SubjectId = '{subject}' AND CourseNumber = {course} AND SectionNumber = '{section}'; '''
         cursor.execute(query)
         sectioninfo = cursor.fetchall()
@@ -179,6 +190,7 @@ def search(user):
 
 @app.route('/result/<user>', methods=["POST"])
 def class_search(user):
+    # multi-class search functionality
     items = request.form
     if len(items) == 0:
         error_message = 'Please select at least one course!'

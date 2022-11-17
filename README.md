@@ -2,10 +2,18 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
+# Update on Nov 18
+
+This week, I implemented the query that returns the top 5 most similar users to a given user depending on the courses the user is taking this semester. This way, when a user is logged in, the main page can display such similar students. I also removed the button that says "Your Friends" in most of the webpages as we no longer implement the functionality.
+
+### Legacy statements
+
 # Update on Nov 11
 I successfully implemented the multi-class search functionality which now handles up to 4 multiple class search. Also, I fixed a minor bug which stopped us from looking for some course information. This was due to the fact that during the migration of the data from the CSV to our DB on AWS, whitespaces and other punctuations were not handled properly for some courses. Thus, I added a piece of code in `app.py` to deal with this seemingly minor issue.
 
-### Legacy statements
+Screenshots for the search page with two classes selected and for the result page:
+<img src="/static/img/search1.png" alt="users" style="height: 250px; width:2276px;"/>
+<img src="/static/img/search2.png" alt="users" style="height: 250px; width:2276px;"/>
 
 # Update on Nov 4
 I populated 10 additional users with valid enrollments to the database so that we have more understanding on how this web app works. Also, I have implemented the multi-class search functionality although this is not still perfect in that the program cannot handle more than 3 multiple class seraches. Next week, I will focus on finalizing this functionality.
