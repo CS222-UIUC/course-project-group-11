@@ -1,0 +1,28 @@
+@{
+var db = Database.Open("classkonnect"); 
+var crn = Request.info["Couse CRN"];
+var selectQueryString = "SELECT * FROM classkonnect WHERE CRN =" + crn; 
+}
+<html> 
+<body> 
+<h1>Course Information</h1> 
+<table> 
+<tr>
+<th>Class Name</th> 
+<th>Number</th> 
+<th>Description</th> 
+<th>Credit Hours</th> 
+
+</tr>
+var row = db.Query(selectQueryString);
+{
+<tr> 
+<td>@row.CourseName</td> 
+<td>@row.CourseNumber</td> 
+<td>@row.Description</td> 
+<td>@row.CreditHours</td> 
+</tr> 
+}
+</table> 
+</body> 
+</html>
