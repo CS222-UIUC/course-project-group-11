@@ -1,18 +1,43 @@
-{% extends "base.html" %}
-{% block content %}
-<br>
-<br>
-<h2>
-  Select a course or courses (up to 4) if you want to find your peers enrolled in the course(s)!
-</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+  </head>
 
-  <form action="/result/{{items[-1]}}" method="POST">
-    {% for section in items[:-1] %}
-        <input type="checkbox" name='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'>
-        <label for='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'> {{section[0][0]}} {{section[0][1]}} {{section[0][2]}}</label><br>
-    {% endfor %}
-  <br>
-  <input type="submit" value="Search">
-  </form>
+  <body>
+    <form action="/main/{{items[-1]}}" method="POST">
+      <input type="submit" value='{{items[0]}}'/>
+    </form>
 
-{% endblock content %}
+    <form action="/update/{{items[-1]}}" method="POST">
+      <input type="submit" value="Update Courses"/>
+    </form>
+
+    <form action="/confirm/{{items[-1]}}" method="POST">
+      <input type="submit" value="Delete Account"/>
+    </form>
+
+    <form action="/" method="GET">
+      <input type="submit" value="Log Out"/>
+    </form>
+
+    <h1>ClassKonnect</h1>
+
+    <br>
+    <br>
+    <h2>
+      Select a course or courses (up to 4) if you want to find your peers enrolled in the course(s)!
+    </h2>
+
+      <form action="/result/{{items[-1]}}" method="POST">
+        {% for section in items[:-1] %}
+            <input type="checkbox" name='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'>
+            <label for='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'> {{section[0][0]}} {{section[0][1]}} {{section[0][2]}}</label><br>
+        {% endfor %}
+      <br>
+      <input type="submit" value="Search">
+      </form>
+    
+  </body>
+</html>

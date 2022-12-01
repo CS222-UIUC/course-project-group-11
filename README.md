@@ -2,11 +2,24 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
+## For the frontend developers
+Feel free to edit the HTML/CSS files in the `static` and `templates` folders.
+
+# Update on Dec 2
+The backend work is ready for the final presentation.
+
+Newly added features in place of the direct messaging feature:
+Adding a course
+Updating a course info
+Deleting a course
+Deleting a user's account
+Logging out of our web app
+
+### Legacy statements
+
 # Update on Nov 18
 
 This week, I implemented the query that returns the top 5 most similar users to a given user depending on the courses the user is taking this semester. This way, when a user is logged in, the main page can display such similar students. I also removed the button that says "Your Friends" in most of the webpages as we no longer implement the functionality.
-
-### Legacy statements
 
 # Update on Nov 11
 I successfully implemented the multi-class search functionality which now handles up to 4 multiple class search. Also, I fixed a minor bug which stopped us from looking for some course information. This was due to the fact that during the migration of the data from the CSV to our DB on AWS, whitespaces and other punctuations were not handled properly for some courses. Thus, I added a piece of code in `app.py` to deal with this seemingly minor issue.
@@ -65,21 +78,6 @@ I managed to extract info on every section of every course offered at UIUC in Fa
 
 ## Requirements
 Refer to the `requirements.txt` file.
-
-## How to get started
-```bash
-cd course-project-group11
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-flask run
-```
-
-## For the frontend developers
-Feel free to edit the HTML/CSS files in the `static` and `templates` folders.
-`base.html` serves as a template for the `main.html` and other html files created in the future.
-`index.html` is solely for users to log in or sign up. Since there should not be the "Your Friends" banner on that page, the html file does not use the aforementioned template file.
-`main.html` will be the very first screen users will see once logged in or signed up.
 
 ## Test Coverage
 We are still having difficulty in using pytest for testing a flask web app, but here's the result of running the following command: `pytest --cov --cov-branch -v test.py`
