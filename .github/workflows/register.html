@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login_page.css') }}">
+  </head>
+
+  <body>
+    <h1>ClassKonnect</h1>
+    <br>
+    <br>
+    <h1>Welcome! Please sign up!</h1>
+    <br>
+    <br>
+    <form action="{{ url_for('user_login') }}" method="POST">
+      <fieldset>
+        <legend>
+          If you already have signed up:
+        </legend>
+        
+        <label>
+          NetID:
+          <input type="netid" name="netid" size="30" maxlength="10">
+        </label>
+
+        <br>
+        <br>
+
+        <label>
+          Password:
+          <input type="pw" name="pw" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          DiscordID:
+          <input type="discId" name="discId" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 1:
+          <input type="course1" name="course1" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course1CRN" name="course1CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course1SN" name="course1SN" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 2:
+          <input type="course2" name="course2" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course2CRN" name="course2CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course2SN" name="course2SN" size="30" maxlength="20">
+        </label>
+        <br/> 
+        <br/>
+
+        <label>
+          Course 3:
+          <input type="course3" name="course3" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course3CRN" name="course3CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course3SN" name="course3SN" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 4:
+          <input type="course4" name="course4" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course4CRN" name="course4CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course4SN" name="course4SN" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 5 (if you are enrolled in):
+          <input type="course5" name="course5" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course5CRN" name="course5CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course5SN" name="course5SN" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <label>
+          Course 6 (if you are enrolled in):
+          <input type="course6" name="course6" size="30" maxlength="20">
+        </label>
+        <label>
+          CRN: 
+          <input type="course6CRN" name="course6CRN" size="30" maxlength="20">
+        </label>
+        <label>
+          Section Number: 
+          <input type="course6SN" name="course6SN" size="30" maxlength="20">
+        </label>
+        <br/>
+        <br/>
+
+        <input type="submit" value="Sign up"/>
+
+
+
+      </fieldset>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+
+    
+  </body>
+</html>
