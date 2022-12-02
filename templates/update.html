@@ -2,24 +2,12 @@
 <html>
   <head>
     <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/update.css') }}">
   </head>
 
   <body>
     <form action="/main/{{items[0]}}" method="POST">
-      <input type="submit" value='{{items[0]}}'/>
-    </form>
-
-    <form action="/update/{{items[0]}}" method="POST">
-      <input type="submit" value="Update Courses"/>
-    </form>
-
-    <form action="/confirm/{{items[0]}}" method="POST">
-      <input type="submit" value="Delete Account"/>
-    </form>
-
-    <form action="/" method="GET">
-      <input type="submit" value="Log Out"/>
+      <input type="submit" value='{{items[0]}}' class = "logout"/>
     </form>
 
     <h1>ClassKonnect</h1>
@@ -28,7 +16,7 @@
     <br>
     {% for section in items[1] %}
     <form action="/update/{{items[0]}}/{{section[0][0]}}/{{section[0][1]}}/{{section[0][2]}}" method="POST">
-      <input type="submit" value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}'/>
+      <input type="submit" value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' class = "res"/>
     </form>
     <br>
     {% endfor %}

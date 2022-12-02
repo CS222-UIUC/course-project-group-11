@@ -1,0 +1,83 @@
+@font-face{
+  font-family: trial;
+  src: url('../Fonts/ZenDots-Regular.ttf');
+}
+
+@font-face {
+  font-family: content1;
+  src: url("../Fonts/DellaRespira-Regular.ttf");
+}
+
+html {
+  background: url("../img/friend.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-family: trial;
+  font-size: 50px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-family: trial;
+  color: rgb(41, 11, 86);
+}
+
+h3 {
+  text-align: center;
+  font-family: trial;
+  margin-left: 40px;
+  font-size: 30px;
+  color: antiquewhite;
+}
+
+.logout{
+  margin-top: 40px;
+  margin-left: 1035px;
+  height: 40px;
+  width: 200px;
+  font-family: trial;
+  font-weight: bold;
+  background-color:lightblue;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  filter: alpha(opacity=500);
+  transition: background-color 0.25s;
+}
+
+
+.logout:hover{
+  background-color: rgba(250, 235, 215, 0.508);
+}
+
+.logout:active {
+  background-color: rgba(250, 235, 215, 0.351);
+}
+
+.coursels{
+  margin-left: 550px;
+  height: 40px;
+  width: 200px;
+  font-family: trial;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  filter: alpha(opacity=500);
+  transition: background-color 0.25s;
+}
+
+.coursels:hover{
+  background-color: rgba(250, 235, 215, 0.508);
+}
+
+.coursels:active {
+  background-color: rgba(250, 235, 215, 0.351);
+}

@@ -2,24 +2,12 @@
 <html>
   <head>
     <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/update2.css') }}">
   </head>
 
   <body>
     <form action="/main/{{items[0]}}" method="POST">
-      <input type="submit" value='{{items[0]}}'/>
-    </form>
-
-    <form action="/update/{{items[0]}}" method="POST">
-      <input type="submit" value="Update Courses"/>
-    </form>
-
-    <form action="/confirm/{{items[0]}}" method="POST">
-      <input type="submit" value="Delete Account"/>
-    </form>
-
-    <form action="/" method="GET">
-      <input type="submit" value="Log Out"/>
+      <input type="submit" value='{{items[0]}}' class = "logout"/>
     </form>
 
     <h1>ClassKonnect</h1>
@@ -27,68 +15,44 @@
     <br>
     <br>
 
-
-    <fieldset>
-
-    <h3>
-      If you would like to delete the course, press the button below.
-    </h3>
+    <h2>Delete Course</h2>
     <form action="/delete_course/{{items[0]}}/{{items[1]}}/{{items[2]}}/{{items[3]}}" method="POST">
-      <input type="submit" value='Delete'/>
+      <input type="submit" value='Delete' class = "btn"/>
     </form>
 
-  </fieldset>
+  
 
 
     <br>
-    <br>
-
+    <h2>Update Course</h2>
     <form action="/update_course/{{items[0]}}/{{items[1]}}/{{items[2]}}/{{items[3]}}" method="POST">
-      <fieldset>
     <h3>Please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
         <br>
         <label>
-          Name:
-          <input type="course1" name="course1" size="30" maxlength="20">
-          Section Number:
-          <input type="sn1" name="sn1" size="30" maxlength="10">
-          <br>
-          CRN:
-          <input type="crn1" name="crn1" size="30" maxlength="10">
+          Name: <input type="course1" name="course1" size="30" maxlength="20" class = "itp"> &nbsp;
+          Section Number: <input type="sn1" name="sn1" size="30" maxlength="10" class = "itp"> &nbsp; &nbsp;
+          CRN: <input type="crn1" name="crn1" size="30" maxlength="10" class = "itp">
         </label>
         <br/>
         <br/>
-        <input type="submit" value="Update"/>
-      </fieldset>
+        <input type="submit" value="Update" class = "btn"/>
     </form>
 
 
+  
     <br>
-    <br>
-    <h3>
-      Or if you would like to simply add a new course...
-    </h3>
-    <br>
-    <br>
-
-
+    <h2>Add Course</h2>
     <form action="/add_course/{{items[0]}}" method="POST">
-      <fieldset>
-    <h3>Likewise, please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
+    <h3>Please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
         <br>
         <label>
-          Name:
-          <input type="course2" name="course2" size="30" maxlength="20">
-          Section Number:
-          <input type="sn2" name="sn2" size="30" maxlength="10">
-          <br>
-          CRN:
-          <input type="crn2" name="crn2" size="30" maxlength="10">
+          Name: <input type="course2" name="course2" size="30" maxlength="20" class = "itp">&nbsp;
+          Section Number: <input type="sn2" name="sn2" size="30" maxlength="10" class = "itp">&nbsp;&nbsp;
+          CRN: <input type="crn2" name="crn2" size="30" maxlength="10" class = "itp">
         </label>
         <br/>
         <br/>
-        <input type="submit" value="Add"/>
-      </fieldset>
+        <input type="submit" value="Add" class = "btn"/>
     </form>
   </body>
 </html>
