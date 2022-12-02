@@ -1,0 +1,79 @@
+
+@font-face{
+  font-family: trial;
+  src: url('../Fonts/ZenDots-Regular.ttf');
+  font-weight: bold;
+}
+
+h1{
+  font-family:trial;
+  margin-left: 420px;
+  font-size: 50px;
+}
+
+.lsthi{
+  margin-top: 20px;
+  margin-left: 550px;
+  font-size: 40px;
+  
+}
+
+
+html{
+  font-family: trial;
+  background: url("../img/search.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
+
+.submitbtn{
+  margin-left: 525px;
+  height: 40px;
+  width: 200px;
+  font-family: trial;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  filter: alpha(opacity=500);
+  transition: background-color 0.25s;
+  background-color: rgb(95, 150, 201);
+}
+
+.submitbtn:hover{
+  background-color: rgba(250, 235, 215, 0.508);
+}
+
+.submitbtn:active {
+  background-color: rgba(230, 162, 74, 0.841);
+}
+
+h2{
+   text-align: center;
+   color: rgb(203, 161, 105);
+}
+
+.logout{
+  margin-top: 40px;
+  margin-left: 1035px;
+  height: 40px;
+  width: 200px;
+  font-family: trial;
+  font-weight: bold;
+  background-color:lightblue;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  filter: alpha(opacity=500);
+  transition: background-color 0.25s;
+}
+
+
+.logout:hover{
+  background-color: rgba(250, 235, 215, 0.508);
+}
+
+.logout:active {
+  background-color: rgba(250, 235, 215, 0.351);
+}
