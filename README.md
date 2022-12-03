@@ -2,8 +2,13 @@
 
 ### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
-## For the frontend developers
-Feel free to edit the HTML/CSS files in the `static` and `templates` folders.
+## Front-end Update Dec 2
+Done with the front-end. Here is a video with all the changes I made. 
+
+https://user-images.githubusercontent.com/92833644/205412145-e403cc02-1470-4a61-9fe1-cd670c0c4734.mp4
+
+
+
 
 # Update on Dec 2
 The backend work is ready for the final presentation.
