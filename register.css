@@ -1,0 +1,67 @@
+
+@font-face{
+  font-family: trial;
+  src: url('../Fonts/ZenDots-Regular.ttf');
+  font-weight: bold;
+}
+
+html{
+  background: url("../img/signup.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+label{
+  text-align: center;
+  margin-left: 200px;
+  font-family: trial;
+  color: antiquewhite;
+}
+h1{
+  font-family:trial;
+  margin-left: 420px;
+  font-size: 50px;
+}
+
+h2{
+  font-family:trial;
+  text-align: center;
+}
+
+h3{
+  font-family:trial;
+  text-align: center;
+}
+
+.btn{
+  margin-left: 525px;
+  height: 40px;
+  width: 200px;
+  font-family: trial;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  filter: alpha(opacity=500);
+  transition: background-color 0.25s;
+  background-color: rgba(226, 226, 215, 0.314);
+  color: rgb(249, 244, 236);
+}
+
+.btn:hover{
+  background-color: rgba(250, 235, 215, 0.508);
+}
+
+.btn:active {
+  background-color: rgba(230, 162, 74, 0.841);
+}
+
+label{
+  text-align: center;
+  margin-left: 150px;
+  font-family: trial;
+  color: rgb(249, 244, 236);
+  margin-right: 70px;
+>>>>>>> d720a29 (Final Frontend)
+}
