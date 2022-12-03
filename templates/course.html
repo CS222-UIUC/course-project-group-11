@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+ 
+    <body>
+        <!-- CRN that's passed in crn -->
+        <!-- assume dataset name = df-->
+      <h1>df["CRN" == crn][6]</h1><!-- class name-->
+      <br>
+      <h3>Subject: df["CRN" == crn][2]</h3> 
+      <h3>Number: df["CRN" == crn][4]</h3> <!-- request data from server -->
+      <h3>Description: df["CRN" == crn][6]</h3> <!-- request data from server -->
+      <h3>Credit Hours: df["CRN" == crn][7]</h3> <!-- request data from server -->
+      <br> 
+      <h3>Days of the week: df["CRN" == crn][12]</h3> <!-- request data from server -->
+      <br>
+      <h3>Professor(s) teaching: </h3> 
+      <h6>{{items[16]}}</h6> 
+ 
+ 
+      <br>
+      <br>
+ 
+ 
+    </body>
+  </html>
+{% endblock content %}
