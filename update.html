@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/update.css') }}">
+  </head>
+
+  <body>
+    <form action="/main/{{items[0]}}" method="POST">
+      <input type="submit" value='{{items[0]}}' class = "logout"/>
+    </form>
+
+    <h1>ClassKonnect</h1>
+
+    <h2>Select the course you would like to update/delete.</h2>
+    <br>
+    {% for section in items[1] %}
+    <form action="/update/{{items[0]}}/{{section[0][0]}}/{{section[0][1]}}/{{section[0][2]}}" method="POST">
+      <input type="submit" value='{{section[0][0]}} {{section[0][1]}} {{section[0][2]}}' class = "res"/>
+    </form>
+    <br>
+    {% endfor %}
+    <br>
+    
+  </body>
+</html>
