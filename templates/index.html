@@ -1,5 +1,63 @@
 <html>
   <head>
+    <style>
+      .container{
+        position: relative;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top:50%;
+        left:50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%,-50%);
+      }
+    </style>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login_page.css') }}">
+  </head>
+
+  <body>
+    <h1>ClassKonnect</h1>
+    <br>
+    <br>
+    <form action="{{ url_for('main') }}" method="POST">
+      <div class = "Logininfo">
+        <label class="netid">
+          NetID:
+          <input type="netid" name="netid" size="30" maxlength="10">
+        </label>
+
+        <br>
+        <br>
+
+        <label class="passwd">
+          Password:
+          <input type="pw" name="pw" size="30" maxlength="20">
+        </label>
+      </div>
+
+        <br/>
+        <br/>
+        <div class="container">
+          <div class="center">
+            <input type="submit" value="Log In" class="lbutton">
+          </div>
+        </div>
+    </form>
+    <form action="{{ url_for('register') }}" method="POST">
+      <div class="container">
+        <div class="center">
+          <input type="submit" value="Sign Up" class = "signmeup"/>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
+
+
+<!-- <html>
+  <head>
     <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/login_page.css') }}">
   </head>
@@ -33,4 +91,4 @@
       <input type="submit" value="Sign Up" class = "signmeup"/>
     </form>
   </body>
-</html>
+</html> -->
