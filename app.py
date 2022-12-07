@@ -19,7 +19,7 @@ def index():
     """Route for /"""
     return render_template("index.html"), 200
 
-@app.route('/main', methods=["POST"])
+@app.route('/main', methods=["GET", "POST"])
 def main():
     """Route for /main"""
     items = request.form
@@ -48,9 +48,9 @@ def main():
             required_info.append(enrollment_info)
             # fetch the top 5 most similar students to the logged in user
             subquery = f''' WHERE netId NOT LIKE '{items['netid']}' AND ({sub_subquery}) '''
-            query4 = f''' SELECT netId FROM classkonnect.users WHERE netID NOT LIKE '{items['netid']}'; '''
             query4 = f''' SELECT netId, COUNT(*) as dupCount FROM classkonnect.enrollments {subquery} GROUP BY netId ORDER BY dupCount DESC LIMIT 5; '''
             cursor.execute(query4)
+            # print(query4)
             other_users = cursor.fetchall()
             required_info.append(other_users)
             cursor.close()
@@ -100,7 +100,7 @@ def main():
                         section = ((sub_id, course_num, section_num),)
                         enrollment_info.append(section)
                         # populate enrollments table
-                        query3 = f''' INSERT INTO classkonnect.enrollments (netId, CRN) VALUES ('{items['netid']}', {crn[0]}); '''
+                        query3 = f''' INSERT INTO classkonnect.enrollments (netId, CRN) VALUES ('{items['netid']}', {crn[0][0]}); '''
                         cursor.execute(query3)
                         mysql.connection.commit()
                     else:
@@ -110,9 +110,19 @@ def main():
                 query = f''' INSERT INTO classkonnect.users (netId, password, discId) VALUES ('{items["netid"]}', '{items["pw"]}', '{items["discId"]}'); '''
                 cursor.execute(query)
                 mysql.connection.commit()
+                que2 = f''' SELECT CRN FROM classkonnect.enrollments WHERE netId = '{items["netid"]}'; '''
+                cursor.execute(que2)
+                courses = cursor.fetchall()
+                sub_subquery = ''
+                for course in courses:
+                    que3 = f''' SELECT SubjectId, CourseNumber, SectionNumber FROM classkonnect.courses WHERE CRN = {course[0]}; '''
+                    cursor.execute(que3)
+                    if course == courses[0]:
+                        sub_subquery = sub_subquery + 'CRN = ' + str(course[0])
+                    else:
+                        sub_subquery = sub_subquery + ' OR CRN = ' + str(course[0])
                 # fetch the top 5 most similar students to the logged in user
                 subquery = f''' WHERE netId NOT LIKE '{items['netid']}' AND ({sub_subquery}) '''
-                query4 = f''' SELECT netId FROM classkonnect.users WHERE netID NOT LIKE '{items['netid']}'; '''
                 query4 = f''' SELECT netId, COUNT(*) as dupCount FROM classkonnect.enrollments {subquery} GROUP BY netId ORDER BY dupCount DESC LIMIT 5; '''
                 cursor.execute(query4)
                 other_users = cursor.fetchall()
