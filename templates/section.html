@@ -1,17 +1,19 @@
-{% extends "base.html" %}
-{% block content %}
-  <h2>{{items['subjectId']}} {{items['courseNum']}} {{items['sectionNum']}} ({{items['creditHours']}})</h2>
-  <br>
-  <h2>{{items['courseName']}}</h2>
-  <br>
-  <p>{{items['description']}}</p>
-  <br>
-  <h2>Main Instructor: {{items['mainInstructor']}}</h2>
-  <br>
-  <h2>Course meetings</h2>
-  {{items['daysOfTheWeek']}}: {{items['startTime']}} - {{items['endTime']}}
-  <br>
-  <br>
-  <h2>Location</h2>
-  {{items['buildingName']}} {{items['roomNum']}}
-{% endblock content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/courseinfo.css') }}">
+  </head>
+
+  <body>
+    <h1 class = "head"> ClassKonnect </h1>
+    <h2 class = "c_name">{{items[1][5]}}</h2>
+    <p class = "c_c">{{items[1][6]}}</p>
+    <h2 class = "it">Main Instructor: {{items[1][16]}}</h2>
+    <h2 class = "it2">Course meetings</h2>
+    <p class = "ct1">{{items[1][13]}}: {{items[1][11]}} - {{items[1][12]}}</p>
+    <h2 class = "it3">Location</h2>
+    <p class = "ct2">{{items[1][15]}} {{items[1][14]}}</p>
+    
+  </body>
+</html>

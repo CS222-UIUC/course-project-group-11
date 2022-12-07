@@ -1,21 +1,18 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
   </head>
 
   <body>
     <h1>ClassKonnect</h1>
     <br>
     <br>
-    <h1>Welcome! Please sign up!</h1>
+    <h2>Welcome! Please sign up!</h2>
     <br>
     <br>
-    <form action="{{ url_for('user_login') }}" method="POST">
-      <fieldset>
-        <legend>
-          Sign up form:
-        </legend>
+    <form action="/main" method="POST">
         
         <label>
           NetID:
@@ -33,7 +30,7 @@
         <br/>
 
         <label>
-          Enter your password again:
+          Enter the password again:
           <input type="pwa" name="pwa" size="30" maxlength="20">
         </label>
         <br/>
@@ -44,87 +41,104 @@
           <input type="discId" name="discId" size="30" maxlength="20">
         </label>
         <br/>
-        <br/>
-
+        <h3>Please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
+        <br>
+        <label>Course 1</label>
+        <br>
         <label>
-          Course 1:
-          <input type="course1" name="course1" size="30" maxlength="20">
-          CRN:
-          <input type="crn1" name="crn1" size="30" maxlength="10">
-          Section Number:
-          <input type="sn1" name="sn1" size="30" maxlength="10">
+          Name: <input type="course1" name="course1" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn1" name="sn1" size="30" maxlength="10">&nbsp;
+          CRN: <input type="crn1" name="crn1" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 2 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course2" name="course2" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn2" name="sn2" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn2" name="crn2" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 3 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course3" name="course3" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn3" name="sn3" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn3" name="crn3" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 4 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course4" name="course4" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn4" name="sn4" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn4" name="crn4" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 5 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course5" name="course5" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn5" name="sn5" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn5" name="crn5" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 6 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course6" name="course6" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn6" name="sn6" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn6" name="crn6" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 7 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course7" name="course7" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn7" name="sn7" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn7" name="crn7" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 8 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course8" name="course8" size="30" maxlength="20">&nbsp;
+          Section Number: <input type="sn8" name="sn8" size="30" maxlength="10">&nbsp;&nbsp;
+          CRN: <input type="crn8" name="crn8" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 9 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course9" name="course9" size="30" maxlength="20"> &nbsp;
+          Section Number: <input type="sn9" name="sn9" size="30" maxlength="10"> &nbsp;&nbsp;
+          CRN: <input type="crn9" name="crn9" size="30" maxlength="10">
+        </label>
+        <br/>
+        <br/>
+        <label>Course 10 (optional)</label>
+        <br>
+        <label>
+          Name: <input type="course10" name="course10" size="30" maxlength="20"> &nbsp;
+          Section Number: <input type="sn10" name="sn10" size="30" maxlength="10"> &nbsp; &nbsp;
+          CRN: <input type="crn10" name="crn10" size="30" maxlength="10">
         </label>
         <br/>
         <br/>
 
-        <label>
-          Course 2 (optional):
-          <input type="course2" name="course2" size="30" maxlength="20">
-          CRN (optional):
-          <input type="crn2" name="crn2" size="30" maxlength="10">
-          Section Number (optional):
-          <input type="sn2" name="sn2" size="30" maxlength="10">
-        </label>
-        <br/>
-        <br/>
+        <input type="submit" value="Create an account" class = "btn"/>
 
-        <label>
-          Course 3 (optional):
-          <input type="course3" name="course3" size="30" maxlength="20">
-          CRN (optional):
-          <input type="crn3" name="crn3" size="30" maxlength="10">
-          Section Number (optional):
-          <input type="sn3" name="sn3" size="30" maxlength="10">
-        </label>
-        <br/>
-        <br/>
-
-        <label>
-          Course 4 (optional):
-          <input type="course4" name="course4" size="30" maxlength="20">
-          CRN (optional):
-          <input type="crn4" name="crn4" size="30" maxlength="10">
-          Section Number (optional):
-          <input type="sn4" name="sn4" size="30" maxlength="10">
-        </label>
-        <br/>
-        <br/>
-
-        <label>
-          Course 5 (optional):
-          <input type="course5" name="course5" size="30" maxlength="20">
-          CRN (optional):
-          <input type="crn5" name="crn5" size="30" maxlength="10">
-          Section Number (optional):
-          <input type="sn5" name="sn5" size="30" maxlength="10">
-        </label>
-        <br/>
-        <br/>
-
-        <label>
-          Course 6 (optional):
-          <input type="course6" name="course6" size="30" maxlength="20">
-          CRN (optional):
-          <input type="crn6" name="crn6" size="30" maxlength="10">
-          Section Number (optional):
-          <input type="sn6" name="sn6" size="30" maxlength="10">
-        </label>
-        <br/>
-        <br/>
-
-        <input type="submit" value="Create an account"/>
-
-
-
-      </fieldset>
     </form>
     <br>
     <br>
-    <br>
-    <br>
 
-    
-
-    
   </body>
 </html>

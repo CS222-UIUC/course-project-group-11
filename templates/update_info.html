@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="{{ url_for('static', filename='img/c.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/update2.css') }}">
+  </head>
+
+  <body>
+    <form action="/main/{{items[0]}}" method="POST">
+      <input type="submit" value='{{items[0]}}' class = "logout"/>
+    </form>
+
+    <h1>ClassKonnect</h1>
+
+    <br>
+    <br>
+
+    <h2>Delete Course</h2>
+    <form action="/delete_course/{{items[0]}}/{{items[1]}}/{{items[2]}}/{{items[3]}}" method="POST">
+      <input type="submit" value='Delete' class = "btn"/>
+    </form>
+
+  
+
+
+    <br>
+    <h2>Update Course</h2>
+    <form action="/update_course/{{items[0]}}/{{items[1]}}/{{items[2]}}/{{items[3]}}" method="POST">
+    <h3>Please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
+        <br>
+        <label>
+          Name: <input type="course1" name="course1" size="30" maxlength="20" class = "itp"> &nbsp;
+          Section Number: <input type="sn1" name="sn1" size="30" maxlength="10" class = "itp"> &nbsp; &nbsp;
+          CRN: <input type="crn1" name="crn1" size="30" maxlength="10" class = "itp">
+        </label>
+        <br/>
+        <br/>
+        <input type="submit" value="Update" class = "btn"/>
+    </form>
+
+
+  
+    <br>
+    <h2>Add Course</h2>
+    <form action="/add_course/{{items[0]}}" method="POST">
+    <h3>Please enter either the course's name and section, or its 5-digit CRN (e.g., CS 222 SL1 or 74484)</h3>
+        <br>
+        <label>
+          Name: <input type="course2" name="course2" size="30" maxlength="20" class = "itp">&nbsp;
+          Section Number: <input type="sn2" name="sn2" size="30" maxlength="10" class = "itp">&nbsp;&nbsp;
+          CRN: <input type="crn2" name="crn2" size="30" maxlength="10" class = "itp">
+        </label>
+        <br/>
+        <br/>
+        <input type="submit" value="Add" class = "btn"/>
+    </form>
+  </body>
+</html>
