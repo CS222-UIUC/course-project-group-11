@@ -7,7 +7,17 @@ Done with the front-end. Here is a video with all the changes I made.
 
 https://user-images.githubusercontent.com/92833644/205412145-e403cc02-1470-4a61-9fe1-cd670c0c4734.mp4
 
+## Requirements
+Refer to the `requirements.txt` file.
 
+## How to get started
+```bash
+cd course-project-group11
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+flask run
+```
 
 
 # Update on Dec 2
