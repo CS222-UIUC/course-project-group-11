@@ -1,16 +1,20 @@
 # ClassKonnect (Group 11 project in CS 222)
+## Frontend: Arin Dhawan, Meg Li, Adam Seskiewicz
+## Backend: Takashi Yoda
 
-### [our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
+### [Our presentation](https://mediaspace.illinois.edu/media/t/1_y77mn09u)
+### [Our proposal](https://docs.google.com/document/d/1UTmIv_weaekLc5lBQdIZ6UTJ0D-l6-Cf1y4TpaT1hT0/edit)
 
-## Front-end Update Dec 2
-Done with the front-end. Here is a video with all the changes I made. 
+## Summary of our presentation
+In our final presentation, we provided a high level description of our web application and how it differs from existing services such as Piazza or Campuswire. Then, we proceeded to talk about the technical architecture of our application, followed by a short demo explaining each feature/functionality. In the final part of the presentation, we talked about a lesson we learned and a problem we faced (and how we dealt with it) throughout the project.
 
-https://user-images.githubusercontent.com/92833644/205412145-e403cc02-1470-4a61-9fe1-cd670c0c4734.mp4
+## Technical architecture
+<img src="/static/img/techarch.png" alt="users" style="height: 450px; width:2276px;"/>
 
-## Requirements
-Refer to the `requirements.txt` file.
+Our frontend receives the user input, which is then sent to the request handler. The request handler then vets and verifies the request before communicating with the SQL database hosted on AWS and sends back the relevant information to be displayed on the frontend. Our Frontend was written with both HTML and CSS, with contributions from Adam, Arin, and Meg, while our Backend was built by Takashi in a Flask framework with Python to handle queries and SQL to store the data.
 
-## How to get started
+## Instructions
+### If you would like to utilize a virtual environment:
 ```bash
 cd course-project-group11
 python -m venv .venv
@@ -19,18 +23,29 @@ pip install -r requirements.txt
 flask run
 ```
 
+### Otherwise:
+```bash
+cd course-project-group11
+pip install -r requirements.txt
+python3 -m flask run
+```
+
+# Legacy statements
+
+## Front-end Update Dec 2
+Done with the front-end. Here is a video with all the changes I made. 
+
+https://user-images.githubusercontent.com/92833644/205412145-e403cc02-1470-4a61-9fe1-cd670c0c4734.mp4
 
 # Update on Dec 2
 The backend work is ready for the final presentation.
 
 Newly added features in place of the direct messaging feature:
-Adding a course
-Updating a course info
-Deleting a course
-Deleting a user's account
+Adding a course\
+Updating a course info\
+Deleting a course\
+Deleting a user's account\
 Logging out of our web app
-
-### Legacy statements
 
 # Update on Nov 18
 
@@ -90,9 +105,6 @@ Class Search
 
 ## Oct 7 or 14
 I managed to extract info on every section of every course offered at UIUC in Fall 2022 from Course Explorer API. Refer to `course_extractor.ipynb`. If you run each cell in the jupyter notebook, you will obtain `fall2022_courses.csv` which is exactly what we need. Now that it is just a few steps away from setting up a database, I guess each of us can set it up locally. I consider setting it up on AWS so that we all can interact with the DB.
-
-## Requirements
-Refer to the `requirements.txt` file.
 
 ## Test Coverage
 We are still having difficulty in using pytest for testing a flask web app, but here's the result of running the following command: `pytest --cov --cov-branch -v test.py`
